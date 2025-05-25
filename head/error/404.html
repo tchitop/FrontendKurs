@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Seite nicht gefunden (404)</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            color: red;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .container a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: rgb(76, 199, 232);
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .container a:hover {
+            background-color: rgb(4, 140, 255);
+        }
+        .container a:active {
+            transform: scale(0.95);
+        }           
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404 - Seite nicht gefunden</h1>
+        <p>Die angeforderte Seite existiert nicht.</p>
+        <a href="/head/index.html">Zur Startseite</a>
+    </div>
+    <script>
+        // Optional: JavaScript für zusätzliche Interaktivität
+        document.querySelector('a').addEventListener('click', function() {
+            alert('Sie werden zur Startseite weitergeleitet.');
+        });
+    </script>
+</body>
+</html>

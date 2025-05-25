@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+    <link rel="stylesheet" href="/head/nav.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+        .counter {
+            text-align: center;
+            margin-top: 50px;
+            font-family: 'Playwrite DK Loopet', sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   
+        }
+        .CountText {
+            font-size: 2em;
+            color: #333;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <script src="/head/nav.js"></script>
+
+    <div class="counter">
+        <h1>Counter Example</h1>
+        <button id="increment">Runter</button>
+        <button id="decrement">Hoch</button>
+        <button id="reset">Reset</button>
+        <button id="random">Random Zahl</button>
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+        <button id="max">Maximum Zahl</button>
+        <button id="min">Minimum Zahl</button>
+        <br><br>
+        <h1 style="font-size: 1.5em;"><span id="Zahl">Aktuelle Zahl:</span></h1>
+        <p><span class="CountText" id="count">0</span></p>
+
+        <script>
+            let count = 0;
+            let maxCount = 0; // Größte je erreichte Zahl
+
+            function updateCountDisplay() {
+                document.getElementById('count').textContent = count;
+                if (count > maxCount) {
+                    maxCount = count;
+                }
+            }
+
+            document.getElementById('increment').addEventListener('click', () => {
+                count--;
+                updateCountDisplay();
+            });
+
+            document.getElementById('decrement').addEventListener('click', () => {
+                count++;
+                updateCountDisplay();
+            });
+
+            document.getElementById('reset').addEventListener('click', () => {
+                count = 0;
+                updateCountDisplay();
+            });
+
+            document.getElementById('random').addEventListener('click', () => {
+                count = Math.floor(Math.random() * 100);
+                updateCountDisplay();
+            });
+
+            document.getElementById('hide').addEventListener('click', () => {
+                document.getElementById('count').style.display = 'none';
+                document.getElementById('Zahl').style.display = 'none';
+            });
+
+            document.getElementById('show').addEventListener('click', () => {
+                document.getElementById('count').style.display = 'inline';
+                document.getElementById('Zahl').style.display = 'block';
+            });
+
+            document.getElementById('max').addEventListener('click', () => {
+                count = Infinity; // Setzt die Zahl auf den maximalen Wert
+                updateCountDisplay();
+            });
+            document.getElementById('min').addEventListener('click', () => {
+                count = -Infinity; // Setzt die Zahl auf den minimalen Wert
+                updateCountDisplay();
+            });
+
+        </script>
+        <script>
+            fetch('/head/nav.html')
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+            });
+        </script>
+
+    </div>
+</body>
+</html>

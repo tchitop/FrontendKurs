@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/head/nav.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurse und Teilnehmeranzahl</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        details {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Verfügbare Kurse und Teilnehmeranzahl:</h1>
+<p>Lol</p>
+<table>
+    <tr>
+        <th>Kursname</th>
+        <th>Teilnehmeranzahl</th>
+    </tr>
+    <tr>
+        <td>Frontend-Kurs ("Bau deine eigene Website!")</td>
+        <td>5 Teilnehmer</td>
+    </tr>
+    <tr>
+        <td>Backend-Kurs ("Einführung in Python")</td>
+        <td>8 Teilnehmer</td>
+    </tr>
+    <tr>
+        <td>Full-Stack-Kurs ("Von der Idee zur Umsetzung")</td>
+        <td>10 Teilnehmer</td>
+    </tr>
+</table>
+
+<details>
+    <summary>Kursleiter</summary>
+    <p>Hier sind die Informationen zu den Kursleitern.</p>
+</details>
+<!-- Fehler-Handling-Script -->
+<script>
+  async function urlExists(url) {
+    try {
+      const response = await fetch(url, { method: 'HEAD' });
+      return response.ok;
+    } catch {
+      return false;
+    }
+  }
+
+  document.querySelectorAll('a[href^="/"], a[href^="./"], a[href^="../"]').forEach(link => {
+    link.addEventListener('click', async function(event) {
+      event.preventDefault();
+      const url = this.getAttribute('href');
+
+      const exists = await urlExists(url);
+      if (exists) {
+        window.location.href = url;
+      } else {
+        window.location.href = '/head/error/404.html';
+      }
+    });
+  });
+</script>
+</body>
+</html>

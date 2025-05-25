@@ -1,0 +1,129 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 5px 10px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: rgb(76, 199, 232);
+}
+body {
+  padding-top: 60px; /* passt zur geschätzten Höhe deiner Navbar */
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav a {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  nav {
+    background-color: #222;
+  }
+  
+  nav a {
+    color: #ddd;
+  }
+  
+  nav a:hover,
+  nav a.active {
+    background-color: rgb(76, 199, 232);
+    color: white;
+  }
+}
+/* Light mode styles */ 
+@media (prefers-color-scheme: light) {
+  nav {
+    background-color: #f8f9fa;
+  }
+  
+  nav a {
+    color: #333;
+  }
+  
+  nav a:hover,
+  nav a.active {
+    background-color: rgb(76, 199, 232);
+    color: white;
+  }
+}
+/* Additional styles for better visibility */
+nav a {
+  font-size: 16px;
+  font-weight: 500;
+}
+nav a.active {
+  background-color: rgb(76, 199, 232);
+  color: white;
+}
+/* Accessibility styles */
+nav a:focus {
+  outline: 2px solid rgb(76, 199, 232);
+  outline-offset: 2px;
+}
+/* Print styles */
+@media print {
+  nav {
+    display: none;
+  }
+}
+/* Mobile-first styles */   
+@media (max-width: 480px) {
+  nav {
+    padding: 5px 0;
+  }
+  
+  nav a {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+/* Hover effects for touch devices */   
+@media (hover: hover) {
+  nav a:hover {
+    background-color: rgb(76, 199, 232);
+    color: white;
+  }
+}
+/* Focus styles for keyboard navigation */
+nav a:focus {
+  background-color: rgb(76, 199, 232);
+  color: white;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+/* Smooth transition for hover and focus states */
+nav a {
+  transition: background-color 0.3s, color 0.3s;
+}
+/* Custom scrollbar styles */
+nav {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(76, 199, 232) transparent;
+}       
+

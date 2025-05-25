@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/head/nav.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exile&family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrontendKurs</title>
+  <link rel="icon" href="/images/icon.jpg" type="image/jpeg">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding-top: 60px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 10px;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: rgb(76, 199, 232);
+    }
+
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #222;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      z-index: 9999;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #yt-placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      color: white;
+      height: 315px;
+      max-width: 100%;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      width: 100%;
+    }
+
+    .green {
+      background-color: lightgreen;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    /* Nitro-Style Button */
+    .wow-button {
+      background: linear-gradient(135deg, #ff4ecd, #4ae0fc);
+      color: white;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 16px;
+      font-size: 20px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      box-shadow: 0 0 18px rgba(255, 78, 205, 0.8), 0 0 32px rgba(74, 224, 252, 0.6);
+      animation: pulse 2s infinite, float 6s ease-in-out infinite;
+    }
+
+    .wow-button:hover {
+      transform: scale(1.1) rotate(1deg);
+      box-shadow: 0 0 30px rgba(255, 78, 205, 1), 0 0 40px rgba(74, 224, 252, 0.8);
+    }
+
+    .wow-button:active {
+      transform: scale(0.95);
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 18px rgba(255, 78, 205, 0.8), 0 0 32px rgba(74, 224, 252, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(255, 78, 205, 1), 0 0 48px rgba(74, 224, 252, 0.8);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    h1 {
+      font-family: 'Exile', sans-serif;
+      color: #333;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<script src="/head/nav.js"></script>
+<h1>FrontendKurs</h1>
+<p>Willkommen zum FrontendKurs! Hier findest du alle Informationen und Ressourcen, die du benötigst, um erfolgreich zu lernen.</p>
+<h1">Nicht relevant:</h1>
+<div class="green">Test Absatz</div>
+
+<p>Hier ist ein Link zu einem Video:</p>
+<a href="https://youtu.be/Z4Nn-tT6eJ0?si=6fjkA9G4Mwgh6w6G">YouTube Video Link</a>
+
+<br><br>
+<img src="/head/images/cat.jpg" alt="Katze">
+
+<!-- YouTube Video nach Zustimmung -->
+<div id="yt-placeholder">
+  <p>Bitte Cookies akzeptieren, um das YouTube-Video zu laden.</p>
+</div>
+
+<br><br>
+
+<!-- Discord-Nitro-Stil Button -->
+<div style="text-align: center;">
+  <button class="wow-button" onclick="handleClick()">
+    ✨ <span style="font-size: 1.4em;">🌈</span> Schöner Button, der nichts macht <span style="font-size: 1.4em;">🚀</span> ✨
+  </button>
+</div>
+
+<!-- Cookie-Banner -->
+<div id="cookie-banner">
+  Diese Website verwendet YouTube und setzt Cookies.
+  <a href="/head/datenschutz.html" style="color: lightblue;">Mehr erfahren</a>.
+  <button id="accept-cookies" class="wow-button" style="padding: 10px 20px; font-size: 14px;">Einverstanden</button>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    <p>© 2025 Chris David Wollinger. Alle Rechte vorbehalten.</p>
+    <p>Diese Seite verwendet Cookies, um die Benutzererfahrung zu verbessern.</p>
+    <p><a href="/head/impressum.html">Impressum</a></p>
+    <p><a href="/head/datenschutz.html">Datenschutzerklärung</a></p>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  async function urlExists(url) {
+    try {
+      const response = await fetch(url, { method: 'HEAD' });
+      return response.ok;
+    } catch {
+      return false;
+    }
+  }
+
+  document.querySelectorAll('a[href^="/"], a[href^="./"], a[href^="../"]').forEach(link => {
+    link.addEventListener('click', async function(event) {
+      event.preventDefault();
+      const url = this.getAttribute('href');
+      const exists = await urlExists(url);
+      if (exists) {
+        window.location.href = url;
+      } else {
+        window.location.href = '/head/error/404.html';
+      }
+    });
+  });
+
+  // Cookie-Banner und YouTube
+  const banner = document.getElementById('cookie-banner');
+  const ytPlaceholder = document.getElementById('yt-placeholder');
+
+  const loadYoutube = () => {
+    ytPlaceholder.innerHTML = `
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/Z4Nn-tT6eJ0?autoplay=0"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>`;
+  };
+
+  if (localStorage.getItem('cookiesAccepted') === 'true') {
+    banner.style.display = 'none';
+    loadYoutube();
+  }
+
+  document.getElementById('accept-cookies').addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    banner.style.display = 'none';
+    loadYoutube();
+  });
+
+  // Button-Klick-Zähler
+  let count = 0;
+  function handleClick() {
+    count++;
+    if (count >= 5) {
+      alert('🎉 Du hast den Button 5 Mal gedrückt!');
+      count = 0;
+    }
+  }
+</script>
+
+</body>
+</html>

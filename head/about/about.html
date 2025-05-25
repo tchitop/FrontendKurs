@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link rel="stylesheet" href="/head/nav.css">
+  <meta charset="UTF-8">
+  <title>About me</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f2f2f2;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #007acc;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: 'Segoe UI', sans-serif;
+    }
+
+    .social-list li a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    padding: 10px 16px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+    }
+
+    .social-list li a:hover {
+    background-color: #555;
+    }
+
+    .social-list i {
+    font-size: 1.2em;
+    }
+
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<br>
+<br>
+<br>
+<h1>Über mich</h1>
+<p>Willkommen auf meiner persönlichen Seite! Hier erfährst du mehr über mich und meine Interessen.</p>
+<p>Ich bin ein leidenschaftlicher Webentwickler und interessiere mich für verschiedene Technologien. In meiner Freizeit arbeite ich gerne an Projekten, die meine Fähigkeiten erweitern und mir helfen, neue Dinge zu lernen.</p>
+<p>Wenn du mehr über meine Arbeit erfahren möchtest, schau dir gerne meine Projekte an oder kontaktiere mich direkt.</p>
+<br>
+<br>
+
+  <p><strong>🤷‍♂️Wer bin ich?</strong></p>
+  <p>Ich bin ein junger Student und erstelle in meiner Freizeit gerne Websiten oder code Allgemein (Meistens Python)
+  </p>
+
+  <p><strong>Kontakt:</strong><br>
+    Telefon: 0160 7543791<br>
+    E-Mail: <a href="mailto:managment@xtchitopx.de">managment@xtchitopx.de</a>
+  </p>
+
+  <p><strong>Was hat diese Website für einen Zweck?</strong><br>
+    <p>
+        Ich habe diese Website im Kurs vom Robo Studio (Frankfurt) erstellt. Das Thema war Frontend.
+    </p>
+
+  <h2>📭Social Media</h2>
+    <u class="social-list">
+        <li><a href="https://github.com/tchitop",target="_blank"><i class="fab fa-github">Github</i></a></li>
+        <li><a href="https://www.youtube.com/@Game-Haven07" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+        <li><a href="https://wa.me/491607543791" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+    </u>
+  <p><em>Stand: Mai 2025</em></p>
+
+<script>
+  fetch('/head/nav.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+</body>
+</html>
