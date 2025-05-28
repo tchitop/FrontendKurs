@@ -4,16 +4,11 @@
     <meta charset="UTF-8" />
     <title>JS Example</title>
     <link rel="stylesheet" href="/head/nav.css">
-    <link
-        rel="stylesheet"
-        href="style.css"
-    />
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         .counter {
             text-align: center;
@@ -28,6 +23,11 @@
             font-size: 2em;
             color: #333;
             font-family: 'Bebas Neue', sans-serif;
+        }
+        #message {
+            font-size: 1.2em;
+            color: red;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -48,13 +48,23 @@
         <br><br>
         <h1 style="font-size: 1.5em;"><span id="Zahl">Aktuelle Zahl:</span></h1>
         <p><span class="CountText" id="count">0</span></p>
+        <p id="message"></p>
 
         <script>
             let count = 0;
-            let maxCount = 0; // Größte je erreichte Zahl
+            let maxCount = 0;
 
             function updateCountDisplay() {
                 document.getElementById('count').textContent = count;
+                const message = document.getElementById('message');
+
+                if (count <= -1) {
+                    message.textContent = "Oops, das sollte wohl noch gefixt werden.";
+                    message.style.color = "red";
+                } else {
+                    message.textContent = "";
+                }
+
                 if (count > maxCount) {
                     maxCount = count;
                 }
@@ -91,23 +101,26 @@
             });
 
             document.getElementById('max').addEventListener('click', () => {
-                count = Infinity; // Setzt die Zahl auf den maximalen Wert
-                updateCountDisplay();
-            });
-            document.getElementById('min').addEventListener('click', () => {
-                count = -Infinity; // Setzt die Zahl auf den minimalen Wert
+                count = Infinity;
                 updateCountDisplay();
             });
 
+            document.getElementById('min').addEventListener('click', () => {
+                count = -Infinity;
+                updateCountDisplay();
+            });
+
+            // Initialanzeige aktualisieren
+            updateCountDisplay();
         </script>
+
         <script>
             fetch('/head/nav.html')
             .then(response => response.text())
             .then(data => {
-            document.getElementById('nav-placeholder').innerHTML = data;
+                document.getElementById('nav-placeholder').innerHTML = data;
             });
         </script>
-
     </div>
 </body>
 </html>
